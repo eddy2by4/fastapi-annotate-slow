@@ -6,6 +6,7 @@ pip install -r requirements.txt
 Start server:
 fastapi dev main.py
 
+```
 wrk -t12 -c300 -d15s http://localhost:8000/
 Running 15s test @ http://localhost:8000/
   12 threads and 300 connections
@@ -16,8 +17,11 @@ Running 15s test @ http://localhost:8000/
   Socket errors: connect 0, read 465, write 0, timeout 0
 Requests/sec:  27008.01
 Transfer/sec:      3.22MB
+```
 
+vs
 
+```
 wrk -t12 -c300 -d15s http://localhost:8000/slow
 Running 15s test @ http://localhost:8000/slow
   12 threads and 300 connections
@@ -28,5 +32,4 @@ Running 15s test @ http://localhost:8000/slow
   Socket errors: connect 0, read 771, write 0, timeout 0
 Requests/sec:  13684.37
 Transfer/sec:      1.63MB
-
-
+```
