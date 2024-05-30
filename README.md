@@ -1,10 +1,12 @@
 Setup:
+```
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 Start server:
-fastapi dev main.py
+uvicorn main:app --host localhost --port 8000 --log-level critical
 
 ```
 wrk -t12 -c300 -d15s http://localhost:8000/
